@@ -1,10 +1,25 @@
 import 'react'
 
 export interface CardProps {
-    title: string;
-    text: string;
-    src: string;
-    disabled?: boolean;
-    backgroundColor?: string;
+  /**
+   * The title of the card
+   */
+  title: string;
+  /**
+   * The text content of the card
+   */
+  text: string;
+  /**
+   * The URL of the image source 
+   */
+  src: string;
+  /**
+   * Disabled state
+   */
+  disabled?: boolean;
+  /**
+   * Background color 
+   */
+  backgroundColor?: string;
   }
   
