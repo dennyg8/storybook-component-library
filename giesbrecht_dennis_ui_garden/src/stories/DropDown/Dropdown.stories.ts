@@ -44,6 +44,13 @@ export const Default: Story = {
     },
 };
 
+export const NoHover: Story = {
+  args: {
+      isOpen: true,
+      disabled: false,
+  },
+};
+
   export const Work: Story = {
     args: {
         isOpen: true,
