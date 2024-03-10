@@ -23,7 +23,7 @@ const meta = {
   args: {
     isOpen: false,
     disabled: false,
-    backgroundColor: 'white',
+    backgroundColor: 'B6B6B6',
     items: ['Work', 'Skills', 'Setup', 'Contact'],
     hoveredItem: null,
   },

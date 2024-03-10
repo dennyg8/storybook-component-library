@@ -34,15 +34,3 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
-
-export const Email: Story = {
-  args: {
-    label: 'Email:',
-  },
-};
-
-export const Comment: Story = {
-  args: {
-    label: 'Comment:',
-  },
-};

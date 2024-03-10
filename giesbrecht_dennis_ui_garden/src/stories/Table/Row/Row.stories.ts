@@ -36,16 +36,3 @@ export const Default: Story = {
     },
   };
 
-  export const Python: Story = {
-    args: {
-      disabled: false,
-      content: ['Python', '8'],
-    },
-  };
-
-  export const PHP: Story = {
-    args: {
-      disabled: false,
-      content: ['PHP', '7'],
-    },
-  };

@@ -5,18 +5,14 @@ const DropdownContainer = styled.div<{ isOpen: boolean; disabled: boolean; backg
   width: 200px;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  background-color: ${({ backgroundColor }) => backgroundColor || 'white'};
+  background-color: ${({ backgroundColor }) => backgroundColor || 'B6B6B6'};
   border: 1px solid #ccc;
   box-sizing: border-box;
 `;
 
 const DropdownHeader = styled.div<{ isOpen: boolean }>`
-  padding: 10px;
-  border-bottom: ${({ isOpen }) => (isOpen ? 'none' : '1px solid #ccc')};
+  padding: 15px;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
   &:after {
     content: '';
@@ -27,26 +23,6 @@ const DropdownHeader = styled.div<{ isOpen: boolean }>`
     position: absolute;
     right: 10px;
     top: 50%;
-    transform: translateY(-50%);
-
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      width: 25px;
-      height: 3px;
-      background: black;
-      position: absolute;
-      right: 0;
-    }
-
-    &:before {
-      top: -8px;
-    }
-
-    &:after {
-      top: 8px;
-    }
   }
 `;
 

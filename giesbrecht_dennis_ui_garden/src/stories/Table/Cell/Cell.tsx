@@ -14,9 +14,9 @@ const StyledCell = styled.thead<{ disabled?: boolean; backgroundColor?: string }
     th {
       color: #000000;
       font-family: sans-serif;
-      padding: 20px 15px;
       text-align: left;
       width: 200px;
+      padding: 8px 15px;
     }
 `;
 
