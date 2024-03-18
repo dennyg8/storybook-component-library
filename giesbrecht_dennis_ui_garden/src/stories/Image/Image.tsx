@@ -1,6 +1,11 @@
 import styled, {  } from 'styled-components'
 import type { ImageProps } from './Image.types';
 
+const StyledImageContainer = styled.div`
+  display: flex;
+  justify-content: flex-end; 
+`;
+
 const StyledImage = styled.img<{ disabled?: boolean }>`
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
@@ -10,7 +15,9 @@ const StyledImage = styled.img<{ disabled?: boolean }>`
 
 const Image = ({ src, alt, disabled }: ImageProps) => {
   return (
-    <StyledImage src={src} alt={alt} disabled={disabled} />
+    <StyledImageContainer>
+      <StyledImage src={src} alt={alt} disabled={disabled} />
+    </StyledImageContainer>
   );
 };
 

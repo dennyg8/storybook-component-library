@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 import type { DropdownProps } from './Dropdown.types';
+import { Text } from '../Text';
 
 const DropdownContainer = styled.div<{ isOpen: boolean; disabled: boolean; backgroundColor?: string }>`
-  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed; 
+  top: 20px;
+  right: 20px; 
+  width: 72px;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   background-color: ${({ backgroundColor }) => backgroundColor || 'B6B6B6'};
@@ -42,7 +49,7 @@ const DropdownListItem = styled.li<{ isHovered: boolean; disabled?: boolean }>`
   }
 `;
 
-const Dropdown = ({ isOpen, disabled, backgroundColor, items, hoveredItem,  }: DropdownProps) => {
+const Dropdown = ({ isOpen, disabled, backgroundColor, items, hoveredItem }: DropdownProps) => {
   return (
     <DropdownContainer isOpen={isOpen} disabled={disabled} backgroundColor={backgroundColor}>
       <DropdownHeader isOpen={isOpen} />
@@ -53,7 +60,7 @@ const Dropdown = ({ isOpen, disabled, backgroundColor, items, hoveredItem,  }: D
             isHovered={hoveredItem === item}
             disabled={disabled}
           >
-            {item}
+            <Text label={item} disabled={disabled} />
           </DropdownListItem>
         ))}
       </DropdownList>

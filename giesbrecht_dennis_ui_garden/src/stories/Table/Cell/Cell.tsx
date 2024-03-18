@@ -1,5 +1,6 @@
 import { CellProps } from './Cell.types';
 import styled from 'styled-components';
+import Text from '../../Text/Text';
 
 const StyledCell = styled.thead<{ disabled?: boolean; backgroundColor?: string }>`
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
@@ -25,7 +26,7 @@ const Cell = ({ content, disabled, backgroundColor }: CellProps) => {
     <StyledCell disabled={disabled} style={{ backgroundColor }}>
       <tr>
         {content.map((column, index) => (
-          <th key={index}>{column}</th>
+          <th key={index}><Text label={column} disabled={disabled} /></th>
         ))}
       </tr>
     </StyledCell>

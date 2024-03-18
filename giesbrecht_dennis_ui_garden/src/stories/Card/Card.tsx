@@ -1,5 +1,7 @@
 import styled, {  } from 'styled-components'
 import type { CardProps } from './Card.types';
+import { Image } from '../Image';
+import { Text } from '../Text';
 
 const CardContainer = styled.div<{ disabled?: boolean; backgroundColor?: string }>`
   width: 350px;
@@ -10,32 +12,31 @@ const CardContainer = styled.div<{ disabled?: boolean; backgroundColor?: string 
   transition: 0.3s;
   border-radius: 10px;
   overflow: hidden;
+
+  @media (max-width: 1170px) { 
+    width: 100%; 
+    margin: 10px 0; 
+  }
 `;
 
-const CardImage = styled.img`
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-`;
-
-const CardTitle = styled.h2`
-  font-size: 24px;
-  font-weight: bold;
+const TitleContainer = styled.div`
   margin: 16px;
 `;
 
-const CardText = styled.p`
-  font-size: 16px;
+const TextContainer = styled.div`
   margin: 16px;
-  line-height: 1.5;
 `;
 
 const Card = ({ title, text, src, disabled, backgroundColor }: CardProps) => {
   return (
     <CardContainer disabled={disabled} backgroundColor={backgroundColor}>
-      <CardImage src={src} alt={title} />
-      <CardTitle>{title}</CardTitle>
-      <CardText>{text}</CardText>
+      <Image src={src} alt={title} disabled={disabled} />
+      <TitleContainer>
+        <Text label={title} disabled={disabled} fontSize="medium" fontStyle="subHeading" />
+      </TitleContainer>
+      <TextContainer>
+        <Text label={text} disabled={disabled} fontSize="small" />
+      </TextContainer>
     </CardContainer>
   );
 };

@@ -14,7 +14,15 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
+    label: { control: 'text' },
+    disabled: { control: 'boolean' },
+    fontStyle: { control: { type: 'select', options: ['sans-serif', 'name', 'subHeading'] } },
+    fontSize: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
     color: { control: 'color' },
+  },
+  args: {
+    fontStyle: 'name',
+    fontSize: 'small',
   },
 } satisfies Meta<typeof Label>;
 

@@ -1,5 +1,6 @@
 import { HeaderProps } from './Header.types';
 import styled from 'styled-components';
+import Text from '../../Text/Text';
 
 const StyledHeader = styled.thead<{ disabled?: boolean; backgroundColor?: string }>`
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
@@ -31,7 +32,7 @@ const Header = ({ content, disabled, backgroundColor }: HeaderProps) => {
     <StyledHeader disabled={disabled} style={{ backgroundColor }}>
       <tr>
         {content.map((column, index) => (
-          <th key={index}>{column}</th>
+          <th key={index}><Text label={column} disabled={disabled} fontStyle='subHeading'/></th>
         ))}
       </tr>
     </StyledHeader>

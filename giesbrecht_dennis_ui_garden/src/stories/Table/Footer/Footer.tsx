@@ -1,5 +1,6 @@
 import { FooterProps } from './Footer.types';
 import styled from 'styled-components';
+import Text from '../../Text/Text';
 
 const StyledFooter = styled.thead<{ disabled?: boolean; backgroundColor?: string }>`
 background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
@@ -32,7 +33,7 @@ const Footer = ({ content, disabled, backgroundColor }: FooterProps) => {
     <StyledFooter disabled={disabled} style={{ backgroundColor }}>
       <tr>
         {content.map((column, index) => (
-          <th key={index}>{column}</th>
+          <th key={index}><Text label={column} disabled={disabled} /></th>
         ))}
       </tr>
     </StyledFooter>

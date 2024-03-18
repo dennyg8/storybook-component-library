@@ -1,15 +1,13 @@
 import styled, {  } from 'styled-components'
 import type { ButtonProps } from './Button.types'
+import { Text } from '../Text';
+import type { TextProps } from '../Text/Text.types';
 
 /**
  * Primary UI component for user interaction
  */
 const StyledButton = styled.button<{ disabled?: boolean }>`
-  background-color: ${({ disabled }) => (disabled && 'grey') || 'black'};
-  font-size: medium;
-  font-weight: 400;
-  font-style: italic;
-  color: #ffffff;
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   padding: 8px 15px;
   border: none;
   border-radius: 8px;
@@ -17,12 +15,12 @@ const StyledButton = styled.button<{ disabled?: boolean }>`
   transition: background-color 0.3s; 
 `
 
-const Button = ({ label, disabled, backgroundColor }: ButtonProps) => {
+const Button = ({ label, disabled, backgroundColor, ...textProps }: ButtonProps & TextProps) => {
   return (
     <StyledButton disabled={disabled} style={{ backgroundColor }}>
-      {label}
+      <Text label={label} disabled={disabled} {...textProps} />
     </StyledButton>
-  )
-}
+  );
+};
 
 export default Button;

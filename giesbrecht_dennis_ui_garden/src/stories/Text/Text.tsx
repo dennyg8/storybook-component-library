@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import type { TextProps } from './Text.types';
 
 const StyledText = styled.text<{ disabled?: boolean; fontStyle?: string }>`
-  color: ${({ disabled }) => (disabled && 'grey') || 'black'};
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'auto')};
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   font-family: ${({ fontStyle }) => {
     switch (fontStyle) {
       case 'sans-serif':

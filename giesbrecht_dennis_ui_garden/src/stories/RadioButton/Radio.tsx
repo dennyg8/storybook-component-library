@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import type { RadioProps } from './Radio.types';
+import { Text } from '../Text';
 
 const RadioContainer = styled.div<{ disabled?: boolean; backgroundColor?: string }>`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
+  position: fixed; 
+  top: 20px;
+  right: 20px; 
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
+  cursor: ${({ disabled }) => (disabled && 'not-allowed') || 'pointer'};
 `;
 
 const RadioButton = styled.div<{ selected?: boolean; disabled?: boolean }>`
@@ -41,9 +46,13 @@ const Radio = ({ selectedOption, disabled, color }: RadioProps) => {
   return (
     <RadioContainer disabled={disabled}>
       <RadioButton selected={selectedOption === 'Light'} disabled={disabled} />
-      <RadioLabel disabled={disabled} color={color}>Light</RadioLabel>
+      <RadioLabel disabled={disabled} color={color}>
+        <Text label="Light" disabled={disabled} color={color} />
+      </RadioLabel>
       <RadioButton selected={selectedOption === 'Dark'} disabled={disabled} />
-      <RadioLabel disabled={disabled} color={color}>Dark</RadioLabel>
+      <RadioLabel disabled={disabled} color={color}>
+        <Text label="Dark" disabled={disabled} color={color} />
+      </RadioLabel>
     </RadioContainer>
   );
 };

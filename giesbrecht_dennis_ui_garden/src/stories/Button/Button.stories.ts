@@ -15,6 +15,17 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    label: { control: 'text' },
+    disabled: { control: 'boolean' },
+    fontStyle: { control: { type: 'select', options: ['sans-serif', 'name', 'subHeading'] } },
+    fontSize: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    color: { control: 'color' },
+  },
+  args: {
+    fontStyle: 'subHeading',
+    fontSize: 'small',
+    color: 'white',
+    backgroundColor: 'black'
   },
 } satisfies Meta<typeof Button>;
 
