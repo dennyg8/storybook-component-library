@@ -5,10 +5,6 @@ import { Text } from '../Text';
 const RadioContainer = styled.div<{ disabled?: boolean; backgroundColor?: string }>`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  position: fixed; 
-  top: 20px;
-  right: 20px; 
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
   background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
   cursor: ${({ disabled }) => (disabled && 'not-allowed') || 'pointer'};

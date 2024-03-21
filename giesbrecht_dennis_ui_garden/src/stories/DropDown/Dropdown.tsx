@@ -3,16 +3,9 @@ import type { DropdownProps } from './Dropdown.types';
 import { Text } from '../Text';
 
 const DropdownContainer = styled.div<{ isOpen: boolean; disabled: boolean; backgroundColor?: string }>`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: fixed; 
-  top: 20px;
-  right: 20px; 
   width: 72px;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
-  background-color: ${({ backgroundColor }) => backgroundColor || 'B6B6B6'};
   border: 1px solid #ccc;
   box-sizing: border-box;
 `;
@@ -58,8 +51,7 @@ const Dropdown = ({ isOpen, disabled, backgroundColor, items, hoveredItem }: Dro
           <DropdownListItem
             key={index}
             isHovered={hoveredItem === item}
-            disabled={disabled}
-          >
+            disabled={disabled}>
             <Text label={item} disabled={disabled} />
           </DropdownListItem>
         ))}

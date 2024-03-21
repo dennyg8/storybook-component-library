@@ -20,7 +20,7 @@ Requirements: have Docker and Node.js installed
         RUN npm install
         COPY . .
         EXPOSE 8083
-        CMD ["npm", "run", "storybook", "-p", "8083"]
+        CMD ["npm", "run", "storybook"]
 
     What this does it sets up a containerized Node.js environment, sets a working directory called app inside the container and copyies the local package.json to the container
     Then it installs the application dependencies, copies remaining files from local to the /app inside the container, sets up that the application inside the container uses port 8083

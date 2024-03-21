@@ -12,11 +12,7 @@ const CardContainer = styled.div<{ disabled?: boolean; backgroundColor?: string 
   transition: 0.3s;
   border-radius: 10px;
   overflow: hidden;
-
-  @media (max-width: 1170px) { 
-    width: 100%; 
-    margin: 10px 0; 
-  }
+  margin-bottom: 20px;
 `;
 
 const TitleContainer = styled.div`

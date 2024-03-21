@@ -9,12 +9,6 @@ const StyledTable = styled.table<{ disabled?: boolean; backgroundColor?: string 
   background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
   cursor: ${({ disabled }) => (disabled && 'not-allowed')};
   border-spacing: 0;
-
-  @media (max-width: 1170px) {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
 `;
 
 const Table = ({ disabled, backgroundColor, headerContent, rowData, footerContent }: TableProps) => {
